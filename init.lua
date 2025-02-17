@@ -92,6 +92,10 @@ vim.g.maplocalleader = ' '
 
 -- Set to true if you have a Nerd Font installed and selected in the terminal
 vim.g.have_nerd_font = true
+-- Relative and actual line numbers
+vim.opt.number = true
+vim.opt.relativenumber = true
+vim.opt.signcolumn = 'number'
 
 -- [[ Setting options ]]
 -- See `:help vim.opt`
@@ -228,6 +232,11 @@ vim.opt.rtp:prepend(lazypath)
 -- NOTE: Here is where you install your plugins.
 require('lazy').setup({
   -- NOTE: Plugins can be added with a link (or for a github repo: 'owner/repo' link).
+  {
+    'neoclide/coc.nvim',
+    branch = 'release',
+    build = 'npm ci',
+  },
   'tpope/vim-sleuth', -- Detect tabstop and shiftwidth automatically
 
   -- NOTE: Plugins can also be added by using a table,
